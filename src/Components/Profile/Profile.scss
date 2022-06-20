@@ -1,0 +1,76 @@
+@import "../../Scss/Variables.scss";
+
+.profile__wrapper {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+
+  &:hover {
+    background-color: $InputColor-Light;
+  }
+}
+
+.profile {
+  .user-icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    border-radius: 50%;
+
+    path {
+      display: block;
+    }
+  }
+}
+
+.profile__inner {
+  margin-right: auto;
+}
+
+.profile__name {
+  margin: 0;
+  margin-bottom: 4px;
+  @include TextBodyBold;
+}
+
+.profile__user-name {
+  margin: 0;
+  @include Caption;
+  color: $shyColor-Light;
+}
+
+.app--dark {
+  .profile__wrapper {
+    &:hover {
+      background-color: $InputColor-Dark;
+    }
+  }
+
+  .profile__user-name {
+    color: $shyColor-Dark;
+  }
+}
+
+@media only screen and(max-width: 1200px) {
+  .profile__inner {
+    display: none;
+  }
+
+  .profile {
+    .user-icon.small {
+      margin: 0;
+    }
+
+    .user-icon{
+      margin: 0;
+    }
+
+    .more-small-icon {
+      display: none;
+    }
+  }
+}

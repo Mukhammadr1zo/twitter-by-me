@@ -1,0 +1,179 @@
+@import "../../Scss/Variables.scss";
+
+.nav {
+  margin-bottom: 55px;
+}
+
+.nav__list {
+  margin: 0;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  margin-left: -10px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.nav__item {
+  & + & {
+    margin-top: 16px;
+  }
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: $textColor-Light;
+  @include TextHeadingMedium;
+
+  .nav__link__inner {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 22px;
+    transition: background-color 0.25s ease;
+  }
+
+  &:hover {
+    .nav__link__inner {
+      background-color: $InputColor-Light;
+    }
+  }
+
+  .icon {
+    margin-right: 24px;
+  }
+
+  .icon--fill {
+    display: none;
+  }
+
+  &--active {
+    color: $primaryColor;
+    font-weight: 700;
+
+    .icon--fill {
+      display: block;
+    }
+
+    .icon--outline {
+      display: none;
+    }
+  }
+}
+
+.app--dark {
+  .nav__link {
+    color: $textColor-Dark;
+
+    &--active {
+      color: $primaryColor;
+    }
+
+    &:hover {
+      .nav__link__inner {
+        background-color: $InputColor-Dark;
+      }
+    }
+  }
+}
+
+@media only screen and(max-height: 730px) {
+  .nav__link[href="/lists"] {
+    display: none;
+  }
+
+  .nav__link[href="/bookmarks"] {
+    display: none;
+  }
+}
+
+@media only screen and(max-height: 600px) {
+  .nav {
+    margin-bottom: 30px;
+  }
+
+  .nav__link[name="profile"] {
+    display: none;
+  }
+}
+
+@media only screen and(max-width: 1200px) {
+  .nav__list {
+    margin: 0;
+  }
+
+  .nav__link {
+    justify-content: center;
+
+    .icon {
+      margin: 0;
+    }
+  }
+
+  .nav__link__text {
+    display: none;
+  }
+}
+
+@media only screen and(max-height: 520px) {
+  // @media only screen and(max-width: 1200px) {
+    .nav__list {
+      margin: 0;
+    }
+
+    .nav__link {
+      justify-content: center;
+
+      .icon {
+        margin: 0;
+      }
+    }
+
+    .nav__link__text {
+      display: none;
+    }
+  // }
+}
+
+@media only screen and(max-width: 500px), (max-height: 520px) {
+  .nav {
+    margin: 0;
+  }
+
+  .nav__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .nav__item {
+    & + & {
+      margin-top: 0;
+    }
+  }
+
+  .nav__item:nth-child(5) {
+    display: none;
+  }
+
+  .nav__item:nth-child(6) {
+    display: none;
+  }
+
+  .nav__item:nth-child(7) {
+    display: none;
+  }
+
+  .nav__item:nth-child(8) {
+    display: none;
+  }
+
+  .nav__link[name="profile"] {
+    display: none;
+  }
+
+  .nav__link[href="/more"] {
+    display: none;
+  }
+}

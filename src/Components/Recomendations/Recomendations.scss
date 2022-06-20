@@ -1,0 +1,57 @@
+@import "../../Scss/Variables.scss";
+
+.recomendations {
+  margin-bottom: 16px;
+  border-radius: 16px;
+  background-color: $cardColor-Light;
+}
+
+.recomendations__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid $strokeColor-Light;
+}
+
+.recomendations__heading {
+  margin: 0;
+  @include TextHeadingBold;
+}
+
+.recomendations__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.recomendations__bottom {
+  padding: 16px;
+}
+
+.recomendations__link {
+  display: block;
+  @include TextBody;
+  color: $primaryColor;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.app--dark {
+  .recomendations {
+    background-color: $cardColor-Dark;
+  }
+
+  .recomendations__top {
+    border-color: $strokeColor-Dark;
+  }
+
+  .recomendations__top__button {
+    &:hover {
+      background-color: $InputColor-Dark;
+    }
+  }
+}

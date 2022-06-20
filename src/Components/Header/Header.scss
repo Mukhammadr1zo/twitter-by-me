@@ -1,0 +1,266 @@
+@import "../../Scss/Variables.scss";
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+  height: 100%;
+  padding: 16px 0;
+  background-color: $bG-Light;
+}
+
+.header__inner {
+  flex-grow: 1;
+}
+
+.header__link {
+  display: block;
+  margin-top: -10px;
+  margin-bottom: 45px;
+  margin-left: -10px;
+  color: $primaryColor;
+}
+
+.header__link__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  transition: background-color 0.25s ease;
+}
+
+.header__link:hover {
+  .header__link__inner {
+    background-color: $InputColor-Light;
+  }
+}
+
+.header {
+  .tweet-button {
+    width: 100%;
+    margin-left: -10px;
+  }
+}
+
+.header {
+  .profile {
+    margin-left: -10px;
+    margin-bottom: -10px;
+  }
+}
+
+.header__bottom{
+  position: relative;
+}
+
+.app--dark {
+  .header {
+    background-color: $bG-Dark;
+  }
+
+  .header__link {
+    color: $textColor-Dark;
+  }
+
+  .header__link:hover {
+    .header__link__inner {
+      background-color: $InputColor-Dark;
+    }
+  }
+}
+
+@media only screen and(max-height: 600px) {
+  .header__link {
+    margin-bottom: 25px;
+  }
+}
+
+@media only screen and(max-width: 1200px) {
+  .header {
+    width: auto;
+    margin-right: -10px;
+
+    .tweet-button {
+      display: block;
+      width: auto;
+      margin: 0 auto;
+      padding: 11px;
+
+      &__text {
+        display: none;
+      }
+
+      .tweet-icon {
+        display: block;
+      }
+    }
+
+    .profile {
+      margin-left: 0;
+    }
+  }
+
+  .header__link {
+    margin-left: 0px;
+
+    &__inner {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media only screen and(max-height: 520px) {
+  .header {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+    border-top: 1px solid $strokeColor-Light;
+
+    .profile {
+      display: none;
+    }
+
+    .tweet-button {
+      display: block;
+      width: auto;
+      margin: 0 auto;
+      padding: 11px;
+
+      &__text {
+        display: none;
+      }
+
+      .tweet-icon {
+        display: block;
+      }
+    }
+  }
+
+  .header__link {
+    display: none;
+  }
+
+  .app--dark {
+    .header {
+      border-color: $strokeColor-Dark;
+    }
+  }
+
+  @media only screen and(max-width: 100vw) {
+    .header {
+      padding: 5px 0;
+
+      .tweet-button {
+        position: fixed;
+        bottom: 0;
+        transform: translateY(calc(-100% - 20px));
+        right: 10px;
+        width: auto;
+        margin: 0;
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        border-radius: 30px;
+        box-shadow: rgb(136 153 166 / 20%) 0px 0px 10px, rgb(136 153 166 / 25%) 0px 1px 3px 1px;
+
+        &__text {
+          display: block;
+        }
+
+        .tweet-icon {
+          display: block;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  @media only screen and(max-width: 800px) {
+    .header {
+      .tweet-button {
+        position: fixed;
+        bottom: 0;
+        transform: translateY(calc(-100% - 20px));
+        right: 10px;
+        margin: 0;
+        padding: 16px;
+        border-radius: 50%;
+        box-shadow: rgb(136 153 166 / 20%) 0px 0px 10px, rgb(136 153 166 / 25%) 0px 1px 3px 1px;
+
+        &__text {
+          display: none;
+        }
+
+        .tweet-icon {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+// @media only screen and(max-width: 950px) {
+//   .header {
+//     .tweet-button {
+//       display: block;
+//       width: auto;
+//       margin: 0 auto;
+//       padding: 15px;
+//       border-radius: 50%;
+
+//       &__text {
+//         display: none;
+//       }
+
+//       .tweet-icon {
+//         display: block;
+//         margin: 0;
+//       }
+//     }
+//   }
+// }
+
+@media only screen and(max-width: 500px) {
+  .header {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 5px 0;
+    border-top: 1px solid $strokeColor-Light;
+
+    .profile {
+      display: none;
+    }
+
+    .tweet-button {
+      position: fixed;
+      bottom: 0;
+      transform: translateY(calc(-100% - 20px));
+      right: 10px;
+      margin: 0;
+      padding: 16px;
+      border-radius: 50%;
+      box-shadow: rgb(136 153 166 / 20%) 0px 0px 10px, rgb(136 153 166 / 25%) 0px 1px 3px 1px;
+    }
+  }
+
+  .header__link {
+    display: none;
+  }
+
+  .app--dark {
+    .header {
+      border-color: $strokeColor-Dark;
+    }
+  }
+}

@@ -1,0 +1,139 @@
+@import "./Scss/Normalize.scss";
+@import "./Scss/Fonts.scss";
+@import "./Scss/Variables.scss";
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  scroll-behavior: smooth;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+body {
+  height: 100%;
+  font-family: "Roboto", "Arial", sans-serif;
+  @include TextBody;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+
+  &--light {
+    background-color: $bG-Light;
+    color: $textColor-Light;
+  }
+
+  &--dark {
+    background-color: $bG-Dark;
+    color: $textColor-Dark;
+  }
+
+  &__inner {
+    display: flex;
+    column-gap: 30px;
+    max-width: 1400px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+
+.main {
+  width: 695px;
+  min-width: 500px;
+  flex-grow: 1;
+  border-left: 1px solid $strokeColor-Light;
+  border-right: 1px solid $strokeColor-Light;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.app--dark {
+  .main {
+    border-color: $strokeColor-Dark;
+  }
+}
+
+@media only screen and(max-width: 960px) {
+  .app {
+    &__inner {
+      max-width: 730px;
+    }
+  }
+
+  .main {
+    min-width: 0px;
+  }
+}
+
+@media only screen and(max-width: 730px) {
+  .app {
+    &__inner {
+      padding-right: 0;
+    }
+  }
+}
+
+@media only screen and(max-width: 600px), (max-height: 520px) {
+  .app {
+    &__inner {
+      gap: 10px;
+      padding-right: 0;
+      padding-left: 0px;
+    }
+  }
+}
+
+@media only screen and(max-width: 500px) {
+  .main {
+    border: none;
+  }
+}
+
+@media only screen and(max-height: 520px) {
+  .app {
+    &__inner {
+      gap: 30px;
+    }
+  }
+
+  @media only screen and(max-width: 725px) {
+    .main {
+      border: none;
+    }
+  }
+}

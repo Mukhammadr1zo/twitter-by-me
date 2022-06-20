@@ -1,0 +1,189 @@
+@import "../../Scss/Variables.scss";
+
+.profile-edit__modal {
+  // position: fixed;
+  // top: 0;
+  // right: 0;
+  // bottom: 0;
+  // left: 0;
+  display: none;
+
+  &--open {
+    display: block;
+  }
+}
+
+.profile-edit__modal__inner {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  transform: translate(50%, calc(-100% - 10px));
+  width: 300px;
+  height: 200px;
+  background-color: $bG-Light;
+  border-radius: 12px;
+  box-shadow: $box-shadow;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    transform: translate(50%, 100%);
+    width: 0px;
+    height: 0px;
+    border: 10px solid $bG-Light;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    filter: drop-shadow(0px 0px 3px rgba(101, 119, 134, 0.1));
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    transform: translate(50%, calc(100% - 20px));
+    width: 0px;
+    height: 0px;
+    border: 10px solid $bG-Light;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+  }
+}
+
+.profile-edit__modal__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+// (rgba(101, 119, 134, 0.2) 0px 0px 15px, rgba(101, 119, 134, 0.15) 0px 0px 3px 1px);
+
+.app--dark {
+  .profile-edit__modal__inner {
+    background-color: $bG-Dark;
+
+    &::before {
+      border-top-color: $bG-Dark;
+    }
+
+    &::after {
+      border-bottom-color: $bG-Dark;
+    }
+  }
+}
+
+@media only screen and(max-width: 1470px) {
+  .profile-edit__modal__inner {
+    left: 0;
+    transform: translate(0, calc(-100% - 10px));
+
+    &::before {
+      right: 62%;
+      transform: translate(50%, 100%);
+    }
+
+    &::after {
+      right: 62%;
+      transform: translate(50%, calc(100% - 20px));
+    }
+  }
+}
+
+@media only screen and(max-width: 1200px) {
+  .profile-edit__modal__inner {
+    &::before {
+      right: 90%;
+      transform: translate(50%, 100%);
+    }
+
+    &::after {
+      right: 90%;
+      transform: translate(50%, calc(100% - 20px));
+    }
+  }
+}
+
+@media only screen and(max-width: 600px) {
+  .profile-edit__modal__inner {
+    left: 8px;
+    transform: translate(0, calc(-100% - 10px));
+
+    &::before {
+      right: 93%;
+      transform: translate(50%, 100%);
+    }
+
+    &::after {
+      right: 93%;
+      transform: translate(50%, calc(100% - 20px));
+    }
+  }
+}
+
+@media only screen and(max-width: 500px) {
+  .profile-edit__modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba($color: $cardColor-Light, $alpha: 0.7);
+  }
+
+  .app--dark {
+    .profile-edit__modal {
+      background-color: rgba($color: $cardColor-Dark, $alpha: 0.7);
+    }
+  }
+
+  .profile-edit__modal__inner {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 100%;
+    border-radius: 32px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+    &::before {
+      right: 93%;
+      transform: translate(50%, 100%);
+    }
+
+    &::after {
+      right: 93%;
+      transform: translate(50%, calc(100% - 20px));
+    }
+  }
+}
+
+@media only screen and(max-height: 520px) {
+  .profile-edit__modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba($color: $cardColor-Dark, $alpha: 0.7);
+  }
+
+  .profile-edit__modal__inner {
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}

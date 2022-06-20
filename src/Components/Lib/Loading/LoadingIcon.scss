@@ -1,0 +1,31 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 12px;
+}
+
+.loading-icon {
+  transform: rotate(0deg);
+  animation: spline 0.8s linear infinite;
+}
+
+#circle-1 {
+  stroke: rgb(29, 155, 240);
+  opacity: 0.2;
+}
+
+#circle-2 {
+  stroke: rgb(29, 155, 240);
+  stroke-dasharray: 80;
+  stroke-dashoffset: 60;
+}
+
+@keyframes spline {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

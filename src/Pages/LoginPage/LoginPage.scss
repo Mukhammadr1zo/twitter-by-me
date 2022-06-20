@@ -1,0 +1,102 @@
+@import "../../Scss/Variables.scss";
+
+.login {
+  width: 450px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+.login__logo {
+  margin-bottom: 36px;
+}
+
+.login__heading {
+  margin: 0;
+  margin-bottom: 36px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 42px;
+  line-height: 49px;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.login__input {
+  display: block;
+  width: 100%;
+  padding: 22px 20px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: $textColor-Light;
+  border: 1px solid $strokeColor-Light;
+  border-radius: 6px;
+  outline: none;
+  background-color: transparent;
+
+  &::placeholder {
+    color: $shyColor-Light;
+  }
+}
+
+.login__button {
+  width: 100%;
+  padding: 18px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  border: none;
+  background-color: $primaryColor;
+  color: $bG-Light;
+  border-radius: 76px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+
+  &:hover {
+    background-color: $primaryColor-onHover;
+  }
+
+  &:active {
+    background-color: $primaryColor-onClick;
+  }
+}
+
+.login__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login__bottom__button {
+  padding: 0;
+  font-weight: 400;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 24px;
+  text-decoration: none;
+  color: $primaryColor;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.app--dark {
+  .login__input {
+    color: $textColor-Dark;
+    border-color: $strokeColor-Dark;
+    background-color: $InputColor-Dark;
+  }
+
+  &::placeholder {
+    color: $shyColor-Dark;
+  }
+}

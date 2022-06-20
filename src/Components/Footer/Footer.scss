@@ -1,0 +1,21 @@
+.footer{
+  width: 375px;
+  padding-top: 16px;
+  overflow: auto;
+
+  &::-webkit-scrollbar{
+    width: 0;
+  }
+}
+
+.footer{
+  .footer__input{
+    margin-bottom: 16px;
+  }
+}
+
+@media only screen and(max-width: 960px) {
+  .footer{
+    display: none;
+  }
+}

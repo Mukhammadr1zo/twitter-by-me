@@ -1,0 +1,26 @@
+@import "../../Scss/Variables.scss";
+
+.tweet-button {
+  padding: 13.5px;
+  font-family: inherit;
+  @include TextBodyBold;
+  color: $textColor-Dark;
+  background-color: $primaryColor;
+  border: none;
+  border-radius: 24px;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+
+  &:hover {
+    background-color: $primaryColor-onHover;
+  }
+
+  &:active {
+    background-color: $primaryColor-onClick;
+  }
+
+  .tweet-icon{
+    display: none;
+  }
+}

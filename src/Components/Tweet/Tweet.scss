@@ -1,0 +1,183 @@
+@import "../../Scss/Variables.scss";
+
+.tweet {
+  border-top: 1px solid $strokeColor-Light;
+  transition: background-color 0.25s ease;
+
+  &:hover {
+    background-color: $cardColor-Light;
+  }
+}
+
+.tweet__inner {
+  display: flex;
+  padding: 24px 16px;
+}
+
+.tweet {
+  .user-icon,
+  .tweet__user-avatar {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    margin-right: 16px;
+    border-radius: 50%;
+  }
+}
+
+.tweet__content {
+  flex-grow: 1;
+}
+
+.tweet__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.tweet__top__left {
+  display: flex;
+  align-items: center;
+}
+
+.tweet__name {
+  margin: 0;
+  margin-right: 8px;
+  @include TextBodyBold;
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.tweet__user-name {
+  margin-right: 8px;
+  @include TextBody;
+  color: $shyColor-Light;
+}
+
+.tweet__activity {
+  display: flex;
+  align-items: center;
+  @include TextBody;
+  color: $shyColor-Light;
+
+  &::before {
+    content: "";
+    margin-right: 8px;
+    width: 2px;
+    height: 2px;
+    background-color: $shyColor-Light;
+    border-radius: 50%;
+  }
+}
+
+.tweet__top__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: $shyColor-Light;
+}
+
+.tweet__description {
+  margin: 0;
+  margin-bottom: 6px;
+  @include TextBody;
+}
+
+.tweet__image {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+  border-radius: 16px;
+}
+
+.tweet__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.tweet__item__button {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin: -5px;
+  color: $shyColor-Light;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+
+  &[name="retweet"].retweeted {
+    color: $green;
+  }
+
+  &[name="likes"].liked {
+    color: $red;
+  }
+
+  &:hover {
+    background-color: $InputColor-Light;
+  }
+}
+
+.app--dark {
+  .tweet {
+    border-color: $strokeColor-Dark;
+
+    &:hover {
+      background-color: $cardColor-Dark;
+    }
+  }
+
+  .tweet__user-name {
+    color: $shyColor-Dark;
+  }
+
+  .tweet__activity {
+    color: $shyColor-Dark;
+  }
+
+  .tweet__top__button {
+    color: $shyColor-Dark;
+  }
+
+  .tweet__item__button {
+    color: $shyColor-Dark;
+
+    &:hover {
+      background-color: $InputColor-Dark;
+    }
+  }
+}
+
+@media only screen and(max-width: 500px) {
+  .tweet:first-child {
+    border: 0;
+  }
+
+  .tweet__inner {
+    padding: 12px 16px;
+  }
+}
+
+@media only screen and(max-height: 520px) {
+  .tweet:first-child {
+    border: 0;
+  }
+}

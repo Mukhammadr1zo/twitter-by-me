@@ -1,0 +1,111 @@
+@import "../../Scss/Variables.scss";
+
+.new-tweet {
+  padding: 16px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid $strokeColor-Light;
+}
+
+.new-tweet__top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+
+  .user-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    margin-right: 16px;
+
+    path {
+      display: block;
+    }
+  }
+}
+
+.new-tweet__input {
+  font-family: "Roboto";
+  width: 100%;
+  height: auto;
+  padding: 0;
+  color: $textColor-Light;
+  @include TextHeading;
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  &::placeholder {
+    color: $shyColor-Light;
+  }
+}
+
+.new-tweet__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .tweet-button {
+    padding: 11px 16px;
+  }
+}
+
+.new-tweet__list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  margin-left: 56px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.new-tweet__item__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: $primaryColor;
+  transition: background-color 0.25s ease;
+  cursor: pointer;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: $InputColor-Light;
+  }
+}
+
+.app--dark {
+  .new-tweet {
+    border-bottom: 1px solid $strokeColor-Dark;
+  }
+
+  .new-tweet__input {
+    color: $textColor-Dark;
+
+    &::placeholder {
+      color: $shyColor-Dark;
+    }
+  }
+
+  .new-tweet__item__button {
+    &:hover {
+      background-color: $InputColor-Dark;
+    }
+  }
+}
+
+@media only screen and(max-width: 500px) {
+  .new-tweet {
+    display: none;
+  }
+}
+
+@media only screen and(max-height: 520px) {
+  .new-tweet {
+    display: none;
+  }
+}

@@ -1,0 +1,153 @@
+@import "../../Scss/Variables.scss";
+
+.trends {
+  margin-bottom: 16px;
+  border-radius: 16px;
+  background-color: $cardColor-Light;
+}
+
+.trends__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid $strokeColor-Light;
+}
+
+.trends__heading {
+  margin: 0;
+  @include TextHeadingBold;
+}
+
+.trends__top__button {
+  display: flex;
+  align-items: center;
+  margin: -10px;
+  padding: 10px;
+  color: $primaryColor;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  &:hover {
+    color: $primaryColor-onHover;
+    background-color: $InputColor-Light;
+  }
+}
+
+.trends__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.trend {
+  padding: 16px;
+  border-bottom: 1px solid $strokeColor-Light;
+  transition: background-color 0.25s ease;
+
+  &:hover {
+    background-color: $InputColor-Light;
+  }
+}
+
+.trend__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  color: $shyColor-Light;
+}
+
+.trend__top__text {
+  @include TextBody;
+}
+
+.trend__top__button {
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  margin: -10px;
+  padding: 10px;
+  color: $shyColor-Light;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.25s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($color: $primaryColor, $alpha: 0.2);
+  }
+}
+
+.trend__title {
+  margin: 0;
+  margin-bottom: 8px;
+  @include TextBodyBold;
+}
+
+.trend__tweets-count {
+  @include TextBody;
+  color: $shyColor-Light;
+}
+
+.trends__bottom{
+  padding: 16px;
+}
+
+.trends__link {
+  display: block;
+  @include TextBody;
+  color: $primaryColor;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.app--dark {
+  .trends {
+    background-color: $cardColor-Dark;
+  }
+
+  .trends__top {
+    border-color: $strokeColor-Dark;
+  }
+
+  .trends__top__button {
+    &:hover {
+      background-color: $InputColor-Dark;
+    }
+  }
+
+  .trend {
+    border-color: $strokeColor-Dark;
+
+    &:hover {
+      background-color: $InputColor-Dark;
+    }
+  }
+
+  .trend__top {
+    color: $shyColor-Dark;
+  }
+
+  .trend__top__button {
+    color: $shyColor-Dark;
+
+    &:hover {
+      background-color: rgba($color: $primaryColor, $alpha: 0.2);
+    }
+  }
+
+  .trend__tweets-count {
+    color: $shyColor-Dark;
+  }
+}

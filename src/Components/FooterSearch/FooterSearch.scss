@@ -1,0 +1,33 @@
+@import "../../Scss/Variables.scss";
+
+.footer__input {
+  width: 100%;
+  padding: 9px;
+  padding-left: 50px;
+  font-family: "Roboto";
+  @include TextBody;
+  border: none;
+  outline: none;
+  background-color: $InputColor-Light;
+  background-image: url('../../Assets/Images/SearchIcon.svg');
+  background-repeat: no-repeat;
+  background-size: 16px 15px;
+  background-position: 18px center;
+  border-radius: 104px;
+  color: $textColor-Light;
+
+  &::placeholder {
+    color: $shyColor-Light;
+  }
+}
+
+.app--dark {
+  .footer__input {
+    background-color: $InputColor-Dark;
+    color: $textColor-Dark;
+
+    &::placeholder {
+      color: $shyColor-Dark;
+    }
+  }
+}

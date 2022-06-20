@@ -1,0 +1,58 @@
+$bG-Dark: #15202b;
+$InputColor-Dark: #253441;
+$textColor-Dark: #ffffff;
+$shyColor-Dark: #8899a6;
+$strokeColor-Dark: #37454d;
+$cardColor-Dark: #192834;
+
+$bG-Light: #ffffff;
+$InputColor-Light: #ebeef0;
+$textColor-Light: #0f151b;
+$shyColor-Light: #5b7083;
+$strokeColor-Light: #ebeef0;
+$cardColor-Light: #f6f9fa;
+
+$primaryColor: #1ea1f1;
+$primaryColor-onHover: #1a8cd8;
+$primaryColor-onClick: #177cc0;
+
+$red: #ef1c5c;
+$green: #0cb245;
+
+$box-shadow: rgb(101 119 134 / 20%) 0px 0px 15px, rgb(101 119 134 / 15%) 0px 0px 3px 1px;
+
+@mixin TextHeading {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+@mixin TextHeadingMedium {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+@mixin TextHeadingBold {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+@mixin TextBody {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+@mixin TextBodyBold {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+@mixin Caption {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+}
